@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Property Information
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+  
+    <ion-card>
+        <ion-card-header color="primary">
+          {{property.name}}
+        </ion-card-header>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row >
+                    <ion-col col-4>Client</ion-col>
+                    <ion-col col-8>{{property.investorClient.name}}</ion-col>
+                </ion-row>
+                <ion-row >
+                   <ion-col col-4>Address</ion-col>
+                   <ion-col col-8>{{property.addressLine1}}</ion-col>
+                </ion-row>
+                <ion-row  >
+                    <ion-col col-4>City</ion-col>
+                    <ion-col col-8>{{property.city}}</ion-col>
+                 </ion-row>
+                 <ion-row  >
+                    <ion-col col-4>State</ion-col>
+                    <ion-col col-8>{{property.state}}</ion-col>
+                 </ion-row>
+                 <ion-row  >
+                    <ion-col col-4>Size</ion-col>
+                    <ion-col col-8>{{property.propertySize}}</ion-col>
+                 </ion-row>
+              </ion-grid>
+        </ion-card-content>
+      </ion-card>
+  </ion-content>
+  
