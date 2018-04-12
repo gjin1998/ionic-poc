@@ -9,6 +9,12 @@ import { Country } from "../shared/models/country.model";
 import { LeasingCompany } from "../shared/models/leasingCompany.model";
 import { InvestorClient } from "../shared/models/investorClient.model";
 
+export class FilterRequest{
+  key: string;
+  offset: number;
+  limit: number;
+  returnAll: boolean;
+}
 export class Property {
   propertyId: number;
   name: string;
@@ -45,7 +51,7 @@ export class Property {
   country: Country;
   postalCode: string;
   remId: number;
-  rem: SimpleUser;
+  realEstateManager: SimpleUser;
   leasingCompanyId?: number;
   leasingCompany: LeasingCompany;
   leasingAgent: string;

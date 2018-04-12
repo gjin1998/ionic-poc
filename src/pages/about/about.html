@@ -1,9 +1,15 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
       Property
     </ion-title>
   </ion-navbar>
+  <ion-toolbar>
+    <ion-searchbar placeholder="search" [(ngModel)]="queryText" (ionInput)="filterProperties()">
+    
+    </ion-searchbar>
+  </ion-toolbar>
+  
 </ion-header>
 
 <ion-content padding>

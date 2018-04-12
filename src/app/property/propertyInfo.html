@@ -8,7 +8,7 @@
   
   <ion-content padding>
   
-    <ion-card>
+    <ion-card *ngIf="show">
         <ion-card-header color="primary">
           {{property.name}}
         </ion-card-header>
@@ -18,6 +18,22 @@
                     <ion-col col-4>Client</ion-col>
                     <ion-col col-8>{{property.investorClient.name}}</ion-col>
                 </ion-row>
+                <ion-row  >
+                  <ion-col col-4>Client Care Director</ion-col>
+                  <ion-col col-8>{{property.clientCareDirector.displayName}}</ion-col>
+                </ion-row>
+                <ion-row  >
+                  <ion-col col-4>Real Estate Manager</ion-col>
+                  <ion-col col-8>{{property.realEstateManager?.displayName}}</ion-col>
+                </ion-row>
+                <ion-row  >
+                  <ion-col col-4>Asset Manager</ion-col>
+                  <ion-col col-8>{{property.assetManager}}</ion-col>
+                </ion-row>
+                <ion-row  >
+                  <ion-col col-4>Size</ion-col>
+                  <ion-col col-8>{{property.propertySize}}</ion-col>
+               </ion-row>
                 <ion-row >
                    <ion-col col-4>Address</ion-col>
                    <ion-col col-8>{{property.addressLine1}}</ion-col>
@@ -31,9 +47,21 @@
                     <ion-col col-8>{{property.state}}</ion-col>
                  </ion-row>
                  <ion-row  >
-                    <ion-col col-4>Size</ion-col>
-                    <ion-col col-8>{{property.propertySize}}</ion-col>
-                 </ion-row>
+                  <ion-col col-4>Country</ion-col>
+                  <ion-col col-8>{{property.country.name}}</ion-col>
+                </ion-row>
+                <ion-row  >
+                  <ion-col col-4>Division</ion-col>
+                  <ion-col col-8>{{property.division?.name}}</ion-col>
+                </ion-row>
+                <ion-row  >
+                  <ion-col col-4>Local Market</ion-col>
+                  <ion-col col-8>{{property.localMarketArea.name}}</ion-col>
+                </ion-row>
+                <ion-row  >
+                  <ion-col col-4>Property Type</ion-col>
+                  <ion-col col-8>{{property.propertyType.name}}</ion-col>
+                </ion-row>
               </ion-grid>
         </ion-card-content>
       </ion-card>

@@ -31,11 +31,20 @@ export class PropertyService  {
     //return this.get<PropertySearchPagingData>(`${this.serviceBaseUrl}/api/properties/${offset}/${limit}/${returnAll}`);
   }
 
-  getPropertiesContains(key:string, offset: number, limit: number, returnAll: boolean): Observable<PropertyVM[]> {
+  
+  
+  getPropertiesChunk( offset: number, limit: number): Observable<PropertyVM[]> {
     const httpOptions = {
         headers: new HttpHeaders({ 'authorization': environment.authorizationToken })
     };
-    return this.http.get<PropertyVM[]>(`${this.serviceBaseUrl}/api/properties/Filter/${key}/${offset}/${limit}/${returnAll}`, httpOptions);
+    return this.http.get<PropertyVM[]>(`${this.serviceBaseUrl}/api/properties/Page/${offset}/${limit}`, httpOptions);
+  }
+
+  filterProperties(query:string, offset: number, limit: number): Observable<PropertyVM[]> {
+    const httpOptions = {
+        headers: new HttpHeaders({ 'authorization': environment.authorizationToken })
+    };
+    return this.http.get<PropertyVM[]>(`${this.serviceBaseUrl}/api/properties/Filter/${query}/${offset}/${limit}/false`, httpOptions);
   }
 
   getProperty(id :number): Observable<Property> {
