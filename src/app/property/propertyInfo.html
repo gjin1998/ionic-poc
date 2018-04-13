@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="primary">
       <ion-title>
         Property Information
       </ion-title>
@@ -56,11 +56,11 @@
                 </ion-row>
                 <ion-row  >
                   <ion-col col-4>Local Market</ion-col>
-                  <ion-col col-8>{{property.localMarketArea.name}}</ion-col>
+                  <ion-col col-8>{{property.localMarketArea?.name}}</ion-col>
                 </ion-row>
                 <ion-row  >
                   <ion-col col-4>Property Type</ion-col>
-                  <ion-col col-8>{{property.propertyType.name}}</ion-col>
+                  <ion-col col-8>{{property.propertyType?.name}}</ion-col>
                 </ion-row>
               </ion-grid>
         </ion-card-content>

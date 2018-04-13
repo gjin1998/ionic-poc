@@ -1,6 +1,7 @@
 import { ActualGrossLeasing } from "./actualGrossLeasing.model";
-import { Property } from "../../administration/property/property.model";
+//import { Property } from "../../administration/property/property.model";
 import { FinancialYear } from "./financialYear.model";
+import { Property } from "../../property/property.model";
 export class AssetPerformance {
     id: number;
     propertyId: number;

@@ -47,16 +47,18 @@ export class AboutPage {
         console.log('Async operation has ended');
       }
     );
-
-    
      
   }
 
   filterProperties(){
-    this.service.filterProperties(this.queryText,0,  20).subscribe( x=>
-      {
+    if(this.queryText===''){
+      this.service.getPropertiesChunk(0, 20).subscribe( x=>{
+          this.properties = x; 
+        }
+      );
+    }
+    this.service.filterProperties(this.queryText,0,  20).subscribe( x=>{
         this.properties = x;
-        console.log('Async operation has ended');
       }
     );
   }
