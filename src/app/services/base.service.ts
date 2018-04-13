@@ -10,7 +10,7 @@ export class BaseService {
     serviceBaseUrl: string;
     azureAdApiBaseUrl: string;
  
-    private httpClient: HttpClient;npm
+    private httpClient: HttpClient;
 
     constructor(http: HttpClient = null) {
         this.httpClient = http;
