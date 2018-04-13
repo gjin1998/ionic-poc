@@ -2,6 +2,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from "@angular/http";
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { MSAdal, AuthenticationContext, AuthenticationResult } from '@ionic-native/ms-adal';
+
 import { MyApp } from './app.component';
 
 import { PropertiesPage } from '../pages/about/properties';
@@ -43,7 +45,8 @@ import { PropertyInfoPage } from './property/propertyInfo';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PropertyService
+    PropertyService,
+    MSAdal
   ]
 })
 export class AppModule {}

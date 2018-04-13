@@ -1,5 +1,4 @@
-import { SubMarketCompetitiveComparison } from "app/assetPerformance/submarket/SubMarketCompetitiveComparison.model";
-import { ActualGrossLeasing } from "app/shared/models/actualGrossLeasing.model";
+
 
 export class LeasingPerformance {
     public id: number;
@@ -19,6 +18,5 @@ export class LeasingPerformance {
     public updatedDate: Date;
     public sourceSystem: string;
     public sourceKey: string;
-    public actualGrossLeasings: Array<ActualGrossLeasing>;
-    public subMarketCompetitiveComparisons: Array<SubMarketCompetitiveComparison>;
+   
 }
