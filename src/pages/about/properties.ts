@@ -7,10 +7,10 @@ import { Content } from 'ionic-angular/components/content/content';
 import { PropertyInfoPage } from '../../app/property/propertyInfo';
 
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html'
+  selector: 'page-properties',
+  templateUrl: 'properties.html'
 })
-export class AboutPage {
+export class PropertiesPage {
   public page= 0;
   public properties: PropertyVM[];
   public queryText:string;

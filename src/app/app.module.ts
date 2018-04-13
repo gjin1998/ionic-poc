@@ -4,7 +4,7 @@ import { HttpModule } from "@angular/http";
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
+import { PropertiesPage } from '../pages/about/properties';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -18,7 +18,7 @@ import { PropertyInfoPage } from './property/propertyInfo';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
+    PropertiesPage,
     ContactPage,
     HomePage,
     TabsPage,
@@ -33,7 +33,7 @@ import { PropertyInfoPage } from './property/propertyInfo';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
+    PropertiesPage,
     ContactPage,
     HomePage,
     TabsPage,
