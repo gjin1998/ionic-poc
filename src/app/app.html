@@ -1,1 +1,25 @@
-<ion-nav [root]="rootPage"></ion-nav>
+
+<ion-menu [content]="content">
+        <ion-header>
+                <ion-navbar>
+                  <button ion-button menuToggle icon-only>
+                    <ion-icon name='menu'></ion-icon>
+                  </button>
+                  <ion-title>
+                    Menus
+                  </ion-title>
+                </ion-navbar>
+              </ion-header>
+              <ion-content padding>
+                <ion-list>
+                    <ion-list-header>
+                        Navigate
+                    </ion-list-header>
+                    <button menuClose ion-item (click)="gotoProperties()">Properties</button>
+                </ion-list>
+
+
+              </ion-content>
+</ion-menu>
+
+<ion-nav #content [root]="rootPage"></ion-nav>
