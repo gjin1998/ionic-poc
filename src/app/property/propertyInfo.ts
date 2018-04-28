@@ -1,20 +1,24 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { PropertySearchPagingData, PropertySearchResponse, PropertyVM, Property } from '../../app/property/property.model';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, Nav } from 'ionic-angular';
+import { PropertySearchPagingData, PropertySearchResponse, Property } from '../../app/property/property.model';
 import { PropertyService } from '../../app/services/property.service';
 import { LoadingController } from 'ionic-angular/components/loading/loading-controller';
-import { Content } from 'ionic-angular/components/content/content';
+
 import { NavParams } from 'ionic-angular/navigation/nav-params';
+import { FinancialPerformanceTabsPage } from '../../pages/financialPerformanceTabs/financialPerformanceTabs';
+
 
 @Component({
   selector: 'page-propertyInfo',
   templateUrl: 'propertyInfo.html'
 })
 export class PropertyInfoPage {
+  
   public property: Property;
   public show = false;
   private selectId: number;
   constructor(public navCtrl: NavController, 
+    //private app: MyApp,
     private navParams: NavParams,
     private service: PropertyService,
     private loadingCtrl:LoadingController) {
@@ -36,6 +40,10 @@ export class PropertyInfoPage {
    
   }
 
-  
+  onPropertyClicked(){
+    //let nav = this.app.nav;
+   // this.nav.push(FinancialPerformanceTabsPage);
+    this.navCtrl.parent.parent.push(FinancialPerformanceTabsPage, this.selectId);
+  }
 
 }

@@ -9,7 +9,7 @@
   <ion-content padding>
   
     <ion-card *ngIf="show">
-        <ion-card-header color="primary">
+        <ion-card-header color="primary" (click)="onPropertyClicked()">
           {{property.name}}
         </ion-card-header>
         <ion-card-content>

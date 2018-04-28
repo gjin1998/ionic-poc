@@ -16,6 +16,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PropertyService } from './services/property.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PropertyInfoPage } from './property/propertyInfo';
+import { FinancialPerformanceTabsPage } from '../pages/financialPerformanceTabs/financialPerformanceTabs';
+import { NOIPage } from '../pages/financialPerformanceTabs/noi/noi';
+import { RevenuePage } from '../pages/financialPerformanceTabs/revenue/revenue';
+import { ExpensePage } from '../pages/financialPerformanceTabs/expense/expense';
+import { ARPage } from '../pages/financialPerformanceTabs/ar/ar';
+import { BaseService } from './services/base.service';
+import { FinancialPerformanceService } from './services/financialPerformance.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +31,12 @@ import { PropertyInfoPage } from './property/propertyInfo';
     ContactPage,
     HomePage,
     TabsPage,
-    PropertyInfoPage
+    PropertyInfoPage,
+    FinancialPerformanceTabsPage,
+    NOIPage,
+    RevenuePage,
+    ExpensePage,
+    ARPage
   ],
   imports: [
     BrowserModule,
@@ -39,12 +51,19 @@ import { PropertyInfoPage } from './property/propertyInfo';
     ContactPage,
     HomePage,
     TabsPage,
-    PropertyInfoPage
+    PropertyInfoPage,
+    FinancialPerformanceTabsPage,
+    NOIPage,
+    RevenuePage,
+    ExpensePage,
+    ARPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BaseService,
+    FinancialPerformanceService,
     PropertyService,
     MSAdal
   ]

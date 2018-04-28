@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Financial Performance
+    </ion-title>
+  </ion-navbar>
+  <ion-list>
+    <ion-item>
+      <ion-label>Financial Year</ion-label>
+      <ion-select [(ngModel)]="financialYear" (ionChange)='onChange()'>
+        <ion-option value="4">2017</ion-option>
+        <ion-option value="5">2018</ion-option>
+        
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-header>
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="NOI" tabIcon="logo-bitcoin"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Revenue" tabIcon="cash"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Expense" tabIcon="book"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="AR" tabIcon="logo-usd"></ion-tab>
+</ion-tabs>

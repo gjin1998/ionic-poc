@@ -4,7 +4,8 @@ import { environment } from '../../environments/environment';
 import { HttpErrorResponse } from '@angular/common/http';
 import { of } from 'rxjs/observable/of';
 import { catchError, map } from 'rxjs/operators';
-
+import { Injectable } from '@angular/core';
+@Injectable()
 export class BaseService {
     options: Object;
     serviceBaseUrl: string;
