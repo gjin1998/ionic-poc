@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Subject, Observable } from 'rxjs/RX';
+import { Observable } from 'rxjs/Observable';
 
 import { FinancialPerformance } from '../shared/models/financialPerformance.model';
 import { environment } from '../../environments/environment';
