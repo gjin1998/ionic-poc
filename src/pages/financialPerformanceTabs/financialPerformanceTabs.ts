@@ -5,6 +5,8 @@ import { RevenuePage } from './revenue/revenue';
 import { ExpensePage } from './expense/expense';
 import { ARPage } from './ar/ar';
 import { FinancialPerformanceService } from '../../app/services/financialPerformance.service';
+import { FinancialPerformance } from '../../app/shared/models/financialPerformance.model';
+import { NavController, NavParams, LoadingController, Events } from 'ionic-angular';
 
 @Component({
   templateUrl: 'financialPerformanceTabs.html'
@@ -16,17 +18,36 @@ export class FinancialPerformanceTabsPage {
   tab3Root = ExpensePage;
   tab4Root = ARPage;
 
+  propertyId: number;
   financialYear: number;
-  constructor(private fpService: FinancialPerformanceService) {
-
+  financialPerformance: FinancialPerformance;
+  tab2Params = { id: 1 };
+  
+  constructor(public navCtrl: NavController, 
+    private navParams: NavParams,
+    private loadingCtrl:LoadingController,
+    private events: Events,
+    private fpService: FinancialPerformanceService) {
+      this.propertyId = navParams.data;
   }
 
   ionViewDidLoad(){
-   this.fpService.getFinancialPerformance(1, 4, 'George Jin @Dallas')
-    .subscribe(x=> alert(x.totalActualRevenue));
+   
   }
 
   onChange() {
-    alert(this.financialYear);
+
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+    loading.present();
+
+    this.fpService.getFinancialPerformance(this.propertyId, this.financialYear, 'George Jin @Dallas')
+    .subscribe(x=> {
+      this.financialPerformance = x;
+      console.log(x);
+      this.events.publish("financialPerformance",this.financialPerformance);
+      loading.dismiss();
+    });
   }
 }

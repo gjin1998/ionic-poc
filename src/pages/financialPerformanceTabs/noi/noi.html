@@ -9,9 +9,32 @@
 <ion-content>
   <ion-list>
     <ion-list-header>Noi</ion-list-header>
-    <ion-item>
-      <ion-icon name="logo-bitcoin" item-start></ion-icon>
+    <ion-item (click)="onClick()">
+      <ion-icon name="logo-bitcoin" item-start ></ion-icon>
       NOI details
     </ion-item>
   </ion-list>
+  <ion-grid>
+    <ion-row padding-left>
+        <ion-col>Actual NOI</ion-col>
+        <ion-col>Budgeted NOI</ion-col>
+        <ion-col>Variance</ion-col>
+    </ion-row>
+    
+  </ion-grid>
+  <ion-card *ngFor="let item of financialPerformance?.financialPerformanceDetails; index as i;">
+    <ion-card-header color="primary" (click)="onNoiClicked()">
+      Month {{item.month}}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col col-4>{{item.actualNOI}}</ion-col>
+        <ion-col col-4>{{item.budgetedNOI}}</ion-col>
+        <ion-col col-4>{{item.noiVariance}}</ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-12>{{item.noiVarianceNotes}}</ion-col>
+        </ion-row>
+    </ion-card-content>
+    </ion-card>
 </ion-content>

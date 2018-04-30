@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-ar',
@@ -7,8 +7,8 @@ import { NavController } from 'ionic-angular';
 })
 export class ARPage {
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController, private navParams: NavParams) {
+    console.log(navParams);
   }
 
 }

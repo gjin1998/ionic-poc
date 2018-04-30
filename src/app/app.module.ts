@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from "@angular/http";
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MSAdal, AuthenticationContext, AuthenticationResult } from '@ionic-native/ms-adal';
-
+import { AgmCoreModule } from '@agm/core';
 import { MyApp } from './app.component';
 
 import { PropertiesPage } from '../pages/about/properties';
@@ -23,6 +23,8 @@ import { ExpensePage } from '../pages/financialPerformanceTabs/expense/expense';
 import { ARPage } from '../pages/financialPerformanceTabs/ar/ar';
 import { BaseService } from './services/base.service';
 import { FinancialPerformanceService } from './services/financialPerformance.service';
+import { GeoService } from './services/geo.service';
+import { MapPage } from '../pages/googleMap/map';
 
 @NgModule({
   declarations: [
@@ -36,13 +38,17 @@ import { FinancialPerformanceService } from './services/financialPerformance.ser
     NOIPage,
     RevenuePage,
     ExpensePage,
-    ARPage
+    ARPage,
+    MapPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCm57su8DrMy6jIpgC57NQnF2moExVOwhc'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -56,7 +62,8 @@ import { FinancialPerformanceService } from './services/financialPerformance.ser
     NOIPage,
     RevenuePage,
     ExpensePage,
-    ARPage
+    ARPage,
+    MapPage
   ],
   providers: [
     StatusBar,
@@ -65,7 +72,8 @@ import { FinancialPerformanceService } from './services/financialPerformance.ser
     BaseService,
     FinancialPerformanceService,
     PropertyService,
-    MSAdal
+    MSAdal,
+    GeoService
   ]
 })
 export class AppModule {}

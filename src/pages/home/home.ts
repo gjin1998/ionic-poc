@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { MSAdal, AuthenticationContext, AuthenticationResult } from '@ionic-native/ms-adal';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -30,6 +31,9 @@ authContext.acquireTokenSilentAsync('https://graph.windows.net', '1dc93bca-05f3-
         }
       );
    */
+
+   
+
 
     let authContext: AuthenticationContext = this.msAdal.createAuthenticationContext('https://login.windows.net/common');
         

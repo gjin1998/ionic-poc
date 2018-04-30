@@ -36,7 +36,7 @@
                </ion-row>
                 <ion-row >
                    <ion-col col-4>Address</ion-col>
-                   <ion-col col-8>{{property.addressLine1}}</ion-col>
+                   <ion-col col-8 (click)="onAddressClicked()"><a>{{property.addressLine1}}</a></ion-col>
                 </ion-row>
                 <ion-row  >
                     <ion-col col-4>City</ion-col>
